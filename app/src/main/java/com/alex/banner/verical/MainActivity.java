@@ -2,13 +2,18 @@ package com.alex.banner.verical;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.alex.widget.banner.tips.Banner;
+import com.alex.widget.banner.tips.listener.OnBottomTipsClickListener;
+import com.alex.widget.banner.tips.listener.OnTopTipsClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity.class";
     private Banner banner;
 
     @Override
@@ -18,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
         banner = (Banner) findViewById(R.id.banner);
         banner.setDelayTime(3000)
-                .setScrollTime(4000);
+                .setScrollTime(4000)
+                .setAutoPlay(true)
+                .setScroll(false);
 
 
         List<String> tipsList = new ArrayList<>();
@@ -29,5 +36,19 @@ public class MainActivity extends AppCompatActivity {
         tipsList.add("沪深百元股阵营扩编 达到23只");
         banner.setTipsList(tipsList);
         banner.start();
+
+        banner.setOnTopTipsClickListener(new OnTopTipsClickListener() {
+            @Override
+            public void OnTopTipsClick(int position) {
+                Log.d(TAG,  "点击" + position);
+            }
+        });
+
+        banner.setOnBottomTipsClickListener(new OnBottomTipsClickListener() {
+            @Override
+            public void OnBottomTipsClick(int position) {
+                Log.d(TAG,  "点击" + position);
+            }
+        });
     }
 }

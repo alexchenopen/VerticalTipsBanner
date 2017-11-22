@@ -82,6 +82,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         delayTime = typedArray.getInt(R.styleable.Banner_delay_time, BannerConfig.TIME);
         scrollTime = typedArray.getInt(R.styleable.Banner_scroll_duration, BannerConfig.DURATION);
         isAutoPlay = typedArray.getBoolean(R.styleable.Banner_is_auto_play, BannerConfig.IS_AUTO_PLAY);
+        isScroll = typedArray.getBoolean(R.styleable.Banner_is_scroll, BannerConfig.IS_SCROLL);
         mLayoutResId = typedArray.getResourceId(R.styleable.Banner_banner_layout, mLayoutResId);
         mTipsLayoutResId = typedArray.getResourceId(R.styleable.Banner_tips_layout, mTipsLayoutResId);
         typedArray.recycle();
@@ -100,7 +101,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     }
 
 
-    public Banner isAutoPlay(boolean isAutoPlay) {
+    public Banner setAutoPlay(boolean isAutoPlay) {
         this.isAutoPlay = isAutoPlay;
         return this;
     }
@@ -154,7 +155,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         return this;
     }
 
-    public Banner setViewPagerIsScroll(boolean isScroll) {
+    public Banner setScroll(boolean isScroll) {
         this.isScroll = isScroll;
         return this;
     }
@@ -311,7 +312,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
                 view.findViewById(R.id.tvTopTips).setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        onTopTipsClickListener.OnTopTipsClick(toRealPosition(position));
+                        onTopTipsClickListener.OnTopTipsClick(toRealPosition(position) * 2);
                     }
                 });
 
@@ -319,7 +320,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
                 view.findViewById(R.id.tvBottomTips).setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        onBottomTipsClickListener.OnBottomTipsClick(toRealPosition(position));
+                        onBottomTipsClickListener.OnBottomTipsClick(toRealPosition(position) * 2 + 1);
                     }
                 });
             return view;
@@ -380,4 +381,13 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     public void releaseBanner() {
         handler.removeCallbacksAndMessages(null);
     }
+
+    public void setOnTopTipsClickListener(OnTopTipsClickListener onTopTipsClickListener) {
+        this.onTopTipsClickListener = onTopTipsClickListener;
+    }
+
+    public void setOnBottomTipsClickListener(OnBottomTipsClickListener onBottomTipsClickListener) {
+        this.onBottomTipsClickListener = onBottomTipsClickListener;
+    }
+
 }

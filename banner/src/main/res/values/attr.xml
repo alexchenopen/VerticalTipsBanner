@@ -4,6 +4,7 @@
         <attr name="delay_time" format="integer"/>
         <attr name="scroll_duration" format="integer"/>
         <attr name="is_auto_play" format="boolean"/>
+        <attr name="is_scroll" format="boolean"/>
         <attr name="banner_layout" format="reference"/>
         <attr name="tips_layout" format="reference"/>
     </declare-styleable>

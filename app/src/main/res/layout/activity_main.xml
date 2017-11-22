@@ -20,6 +20,8 @@
         android:layout_height="100dp"
         android:background="@android:color/white"
         app:delay_time="3000"
-        app:is_auto_play="true"/>
+        app:is_auto_play="true"
+        app:is_scroll="false"
+        app:scroll_duration="4000"/>
 
 </LinearLayout>
