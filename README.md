@@ -47,7 +47,7 @@ banner = (Banner) findViewById(R.id.banner);
                 .setScroll(false);
 ```
 
-### 4、展示tips列表
+### 4、传入tips列表
 ```
 List<String> tipsList = new ArrayList<>();
         tipsList.add("贵州茅台接连出现折价大宗交易");
