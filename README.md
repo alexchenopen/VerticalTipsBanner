@@ -1,10 +1,11 @@
 # VerticalBanner
-现在很多App都有2行的文章小贴士功能，垂直功能，无限轮播。
+现在很多App都有2行的文章小贴士功能，垂直方向轮播展示 文章标题。
 
 ## 效果图
 <img src="screens/circle.gif" />
 
 ## 使用方法
+
 Gradle配置
 
 ### 1. 在project的build.gradle添加如下代码
@@ -35,3 +36,43 @@ compile "com.github.alexchenopen:VerticalTipsBanner:0.0.1"
         app:is_scroll="false"
         app:scroll_duration="4000"/>  
 ```
+可以直接在xml布局文件中设置 滑动间隔delay_time、滑动时间scroll_duration、是否自动滑动is_auto_play、是否可以拖动is_scroll
+
+也可以在Activity中通过Java代码控制
+```
+banner = (Banner) findViewById(R.id.banner);
+        banner.setDelayTime(3000)
+                .setScrollTime(4000)
+                .setAutoPlay(true)
+                .setScroll(false);
+```
+
+### 4、展示tips列表
+```
+List<String> tipsList = new ArrayList<>();
+        tipsList.add("贵州茅台接连出现折价大宗交易");
+        tipsList.add("创纪录！恒指刚刚突破三万点！");
+        tipsList.add("大众领先合资SUV集体下探");
+        tipsList.add("基金辣评 | 大象起舞");
+        tipsList.add("沪深百元股阵营扩编 达到23只");
+        banner.setTipsList(tipsList);
+        banner.start();
+```
+
+### 5、监控点击事件
+
+```
+banner.setOnTopTipsClickListener(new OnTopTipsClickListener() {
+            @Override
+            public void OnTopTipsClick(int position) {
+                Log.d(TAG,  "点击" + position);
+            }
+        });
+
+        banner.setOnBottomTipsClickListener(new OnBottomTipsClickListener() {
+            @Override
+            public void OnBottomTipsClick(int position) {
+                Log.d(TAG,  "点击" + position);
+            }
+        });
+ ```
