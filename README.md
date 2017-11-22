@@ -1,1 +1,1 @@
-# VerticalTipsBanner
+# VerticalBanner

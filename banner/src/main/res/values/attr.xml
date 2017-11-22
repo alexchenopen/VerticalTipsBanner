@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Banner">
+        <attr name="delay_time" format="integer"/>
+        <attr name="scroll_duration" format="integer"/>
+        <attr name="is_auto_play" format="boolean"/>
+        <attr name="banner_layout" format="reference"/>
+        <attr name="tips_layout" format="reference"/>
+    </declare-styleable>
+</resources>
