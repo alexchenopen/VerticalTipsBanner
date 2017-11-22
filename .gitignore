@@ -1,9 +1,39 @@
-.gradle
-/local.properties
+# Eclipse
+.project
+.classpath
+.settings
+.checkstyle
+
+# IntelliJ IDEA
 .idea
-.idea/misc.xml
-.idea/workspace.xml
-.DS_Store
-/build
-/captures
 *.iml
+*.ipr
+*.iws
+classes
+gen-external-apklibs
+
+# Gradle
+.gradle
+build
+
+# Maven
+target
+release.properties
+pom.xml.*
+
+# Ant
+bin
+gen
+build.xml
+ant.properties
+local.properties
+proguard-project.txt
+
+#Crashlytics
+.crashlytics_data
+com_crashlytics_export_strings.xml
+
+# Other
+out/
+.DS_Store
+tmp
