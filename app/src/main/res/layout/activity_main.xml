@@ -14,7 +14,7 @@
         android:layout_marginRight="5dp"
         android:src="@drawable/icon_home_hot_tip"/>
 
-    <com.alex.widget.banner.tips.Banner
+    <com.alex.widget.banner.tips.TipsBanner
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="100dp"

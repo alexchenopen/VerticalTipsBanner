@@ -27,7 +27,7 @@ import fr.castorflex.android.verticalviewpager.VerticalViewPager;
  * Created by chenlin on 17/11/22.
  */
 
-public class Banner extends FrameLayout implements ViewPager.OnPageChangeListener {
+public class TipsBanner extends FrameLayout implements ViewPager.OnPageChangeListener {
     public String tag = "banner";
     private int delayTime = BannerConfig.TIME;
     private int scrollTime = BannerConfig.DURATION;
@@ -50,15 +50,15 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
 
     private WeakHandler handler = new WeakHandler();
 
-    public Banner(Context context) {
+    public TipsBanner(Context context) {
         this(context, null);
     }
 
-    public Banner(Context context, AttributeSet attrs) {
+    public TipsBanner(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public Banner(Context context, AttributeSet attrs, int defStyle) {
+    public TipsBanner(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.context = context;
         viewList = new ArrayList<>();
@@ -78,13 +78,13 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         if (attrs == null) {
             return;
         }
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Banner);
-        delayTime = typedArray.getInt(R.styleable.Banner_delay_time, BannerConfig.TIME);
-        scrollTime = typedArray.getInt(R.styleable.Banner_scroll_duration, BannerConfig.DURATION);
-        isAutoPlay = typedArray.getBoolean(R.styleable.Banner_is_auto_play, BannerConfig.IS_AUTO_PLAY);
-        isScroll = typedArray.getBoolean(R.styleable.Banner_is_scroll, BannerConfig.IS_SCROLL);
-        mLayoutResId = typedArray.getResourceId(R.styleable.Banner_banner_layout, mLayoutResId);
-        mTipsLayoutResId = typedArray.getResourceId(R.styleable.Banner_tips_layout, mTipsLayoutResId);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TipsBanner);
+        delayTime = typedArray.getInt(R.styleable.TipsBanner_delay_time, BannerConfig.TIME);
+        scrollTime = typedArray.getInt(R.styleable.TipsBanner_scroll_duration, BannerConfig.DURATION);
+        isAutoPlay = typedArray.getBoolean(R.styleable.TipsBanner_is_auto_play, BannerConfig.IS_AUTO_PLAY);
+        isScroll = typedArray.getBoolean(R.styleable.TipsBanner_is_scroll, BannerConfig.IS_SCROLL);
+        mLayoutResId = typedArray.getResourceId(R.styleable.TipsBanner_banner_layout, mLayoutResId);
+        mTipsLayoutResId = typedArray.getResourceId(R.styleable.TipsBanner_tips_layout, mTipsLayoutResId);
         typedArray.recycle();
     }
 
@@ -101,22 +101,22 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     }
 
 
-    public Banner setAutoPlay(boolean isAutoPlay) {
+    public TipsBanner setAutoPlay(boolean isAutoPlay) {
         this.isAutoPlay = isAutoPlay;
         return this;
     }
 
-    public Banner setDelayTime(int delayTime) {
+    public TipsBanner setDelayTime(int delayTime) {
         this.delayTime = delayTime;
         return this;
     }
 
-    public Banner setScrollTime(int scrollTime) {
+    public TipsBanner setScrollTime(int scrollTime) {
         this.scrollTime = scrollTime;
         return this;
     }
 
-    public Banner setBannerAnimation(Class<? extends ViewPager.PageTransformer> transformer) {
+    public TipsBanner setBannerAnimation(Class<? extends ViewPager.PageTransformer> transformer) {
         try {
             setPageTransformer(true, transformer.newInstance());
         } catch (Exception e) {
@@ -133,7 +133,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
      * @param limit How many pages will be kept offscreen in an idle state.
      * @return Banner
      */
-    public Banner setOffscreenPageLimit(int limit) {
+    public TipsBanner setOffscreenPageLimit(int limit) {
         if (viewPager != null) {
             viewPager.setOffscreenPageLimit(limit);
         }
@@ -150,17 +150,17 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
      * @param transformer         PageTransformer that will modify each page's animation properties
      * @return Banner
      */
-    public Banner setPageTransformer(boolean reverseDrawingOrder, ViewPager.PageTransformer transformer) {
+    public TipsBanner setPageTransformer(boolean reverseDrawingOrder, ViewPager.PageTransformer transformer) {
         viewPager.setPageTransformer(reverseDrawingOrder, transformer);
         return this;
     }
 
-    public Banner setScroll(boolean isScroll) {
+    public TipsBanner setScroll(boolean isScroll) {
         this.isScroll = isScroll;
         return this;
     }
 
-    public Banner setTipsList(List<String> tipsList) {
+    public TipsBanner setTipsList(List<String> tipsList) {
         this.tipsList = tipsList;
 //        this.count = tipsList.size();
         this.count = (tipsList.size() + 1) / 2;
@@ -176,7 +176,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         start();
     }
 
-    public Banner start() {
+    public TipsBanner start() {
         setCircleViewList(tipsList);
         setData();
         return this;
