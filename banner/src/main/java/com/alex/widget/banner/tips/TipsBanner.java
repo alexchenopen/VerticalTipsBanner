@@ -266,16 +266,15 @@ public class TipsBanner extends FrameLayout implements ViewPager.OnPageChangeLis
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-//        Log.i(tag, ev.getAction() + "--" + isAutoPlay);
-        if (isAutoPlay) {
-            int action = ev.getAction();
-            if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL
-                    || action == MotionEvent.ACTION_OUTSIDE) {
-                startAutoPlay();
-            } else if (action == MotionEvent.ACTION_DOWN) {
-                stopAutoPlay();
-            }
-        }
+//        if (isAutoPlay) {
+//            int action = ev.getAction();
+//            if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL
+//                    || action == MotionEvent.ACTION_OUTSIDE) {
+//                startAutoPlay();
+//            } else if (action == MotionEvent.ACTION_DOWN) {
+//                stopAutoPlay();
+//            }
+//        }
         return super.dispatchTouchEvent(ev);
     }
 
