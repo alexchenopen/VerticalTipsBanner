@@ -48,7 +48,34 @@ banner = (Banner) findViewById(R.id.banner);
                 .setScroll(false);
 ```
 
-xml布局中 app:tips_layout="@layout/layout_tips" 设置tips展示布局，<b>必须把2个TextView的id定义为tvTopTips和tvBottomTips</b>
+xml布局中 app:tips_layout="@layout/layout_tips" 设置tips展示布局，<b>必须把2个TextView的id定义为tvTopTips和tvBottomTips</b> 比如
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTopTips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="tips"
+        android:textColor="#000"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvBottomTips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="tips"
+        android:textColor="#08c3a6"
+        android:textSize="16sp"/>
+</LinearLayout>
+```
 
 ### 4、传入tips列表
 ```
