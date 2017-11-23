@@ -31,6 +31,7 @@ compile "com.github.alexchenopen:VerticalTipsBanner:0.0.1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@android:color/white"
+        app:tips_layout="@layout/layout_tips"
         app:delay_time="3000"
         app:is_auto_play="true"
         app:is_scroll="false"
@@ -46,6 +47,8 @@ banner = (Banner) findViewById(R.id.banner);
                 .setAutoPlay(true)
                 .setScroll(false);
 ```
+
+xml布局中 app:tips_layout="@layout/layout_tips" 设置tips展示布局，<b>必须把2个TextView的id定义为tvTopTips和tvBottomTips</b>
 
 ### 4、传入tips列表
 ```
