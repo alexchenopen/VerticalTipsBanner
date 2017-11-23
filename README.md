@@ -21,7 +21,7 @@ allprojects {
 ### 2. 在Module的build.gradle添加依赖
 
 ```
-compile "com.github.alexchenopen:VerticalTipsBanner:0.0.4"
+compile "com.github.alexchenopen:VerticalTipsBanner:0.0.5"
 ```
 
 ### 3. 在xml中使用该控件
