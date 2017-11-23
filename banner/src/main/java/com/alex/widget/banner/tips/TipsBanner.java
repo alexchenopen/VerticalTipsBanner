@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.alex.widget.banner.tips.listener.OnBottomTipsClickListener;
 import com.alex.widget.banner.tips.listener.OnTopTipsClickListener;
-import com.alex.widget.banner.tips.view.BannerViewPager;
+import com.alex.widget.banner.tips.view.TipsBannerViewPager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class TipsBanner extends FrameLayout implements ViewPager.OnPageChangeLis
     private List<View> viewList;
     private Context context;
     private View bannerContainer;
-    private BannerViewPager viewPager;
+    private TipsBannerViewPager viewPager;
     private BannerPagerAdapter adapter;
     private ViewPager.OnPageChangeListener onPageChangeListener;
     private BannerScroller scroller;
@@ -70,7 +70,7 @@ public class TipsBanner extends FrameLayout implements ViewPager.OnPageChangeLis
         handleTypedArray(context, attrs);
         View view = LayoutInflater.from(context).inflate(mLayoutResId, this, true);
         bannerContainer = view.findViewById(R.id.bannerContainer);
-        viewPager = (BannerViewPager) view.findViewById(R.id.bannerViewPager);
+        viewPager = (TipsBannerViewPager) view.findViewById(R.id.bannerViewPager);
         initViewPagerScroll();
     }
 

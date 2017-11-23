@@ -11,14 +11,14 @@ import fr.castorflex.android.verticalviewpager.VerticalViewPager;
  * Created by chenlin on 17/11/22.
  */
 
-public class BannerViewPager extends VerticalViewPager {
+public class TipsBannerViewPager extends VerticalViewPager {
     private boolean scrollable = true;
 
-    public BannerViewPager(Context context) {
+    public TipsBannerViewPager(Context context) {
         super(context);
     }
 
-    public BannerViewPager(Context context, AttributeSet attrs) {
+    public TipsBannerViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
