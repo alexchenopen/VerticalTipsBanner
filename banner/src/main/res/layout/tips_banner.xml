@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/bannerContainer"
+<RelativeLayout android:id="@id/tipsBannerContainer"
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipChildren="false">
 
     <com.alex.widget.banner.tips.view.TipsBannerViewPager
-        android:id="@id/bannerViewPager"
+        android:id="@id/tipsBannerViewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipChildren="false"/>

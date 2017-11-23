@@ -28,12 +28,12 @@ import fr.castorflex.android.verticalviewpager.VerticalViewPager;
  */
 
 public class TipsBanner extends FrameLayout implements ViewPager.OnPageChangeListener {
-    public String tag = "banner";
+    public String tag = "tips_banner";
     private int delayTime = BannerConfig.TIME;
     private int scrollTime = BannerConfig.DURATION;
     private boolean isAutoPlay = BannerConfig.IS_AUTO_PLAY;
     private boolean isScroll = BannerConfig.IS_SCROLL;
-    private int mLayoutResId = R.layout.banner;
+    private int mLayoutResId = R.layout.tips_banner;
     private int mTipsLayoutResId = R.layout.banner_tips;
     private int count = 0;
     private int currentItem;
@@ -69,8 +69,8 @@ public class TipsBanner extends FrameLayout implements ViewPager.OnPageChangeLis
         viewList.clear();
         handleTypedArray(context, attrs);
         View view = LayoutInflater.from(context).inflate(mLayoutResId, this, true);
-        bannerContainer = view.findViewById(R.id.bannerContainer);
-        viewPager = (TipsBannerViewPager) view.findViewById(R.id.bannerViewPager);
+        bannerContainer = view.findViewById(R.id.tipsBannerContainer);
+        viewPager = (TipsBannerViewPager) view.findViewById(R.id.tipsBannerViewPager);
         initViewPagerScroll();
     }
 

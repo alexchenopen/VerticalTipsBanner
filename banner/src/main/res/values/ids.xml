@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="bannerContainer" type="id"/>
-    <item name="bannerViewPager" type="id"/>
+    <item name="tipsBannerContainer" type="id"/>
+    <item name="tipsBannerViewPager" type="id"/>
     <item name="tvTopTips" type="id"/>
     <item name="tvBottomTips" type="id"/>
 </resources>
