@@ -42,10 +42,10 @@ compile "com.github.alexchenopen:VerticalTipsBanner:0.0.1"
 也可以在Activity中通过Java代码控制
 ```
 banner = (Banner) findViewById(R.id.banner);
-        banner.setDelayTime(3000)
-                .setScrollTime(4000)
-                .setAutoPlay(true)
-                .setScroll(false);
+banner.setDelayTime(3000)
+        .setScrollTime(4000)
+        .setAutoPlay(true)
+        .setScroll(false);
 ```
 
 xml布局中 app:tips_layout="@layout/layout_tips" 设置tips展示布局，<b>必须把2个TextView的id定义为tvTopTips和tvBottomTips</b> 比如
@@ -85,8 +85,8 @@ List<String> tipsList = new ArrayList<>();
         tipsList.add("大众领先合资SUV集体下探");
         tipsList.add("基金辣评 | 大象起舞");
         tipsList.add("沪深百元股阵营扩编 达到23只");
-        banner.setTipsList(tipsList);
-        banner.start();
+banner.setTipsList(tipsList);
+banner.start();
 ```
 
 ### 5、监控点击事件
@@ -99,10 +99,14 @@ banner.setOnTopTipsClickListener(new OnTopTipsClickListener() {
             }
         });
 
-        banner.setOnBottomTipsClickListener(new OnBottomTipsClickListener() {
+banner.setOnBottomTipsClickListener(new OnBottomTipsClickListener() {
             @Override
             public void OnBottomTipsClick(int position) {
                 Log.d(TAG,  "点击" + position);
             }
         });
  ```
+
+
+##FAQ
+QQ:108762795
