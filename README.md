@@ -1,4 +1,4 @@
-# VerticalBanner
+# VerticalTipsBanner
 现在很多App都有2行的文章小贴士功能，垂直方向轮播展示 文章标题。
 
 ## 效果图
