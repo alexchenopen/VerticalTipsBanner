@@ -21,12 +21,12 @@ allprojects {
 ### 2. 在Module的build.gradle添加依赖
 
 ```
-compile "com.github.alexchenopen:VerticalTipsBanner:0.0.1"
+compile "com.github.alexchenopen:VerticalTipsBanner:0.0.2"
 ```
 
 ### 3. 在xml中使用该控件
 ```
-<com.alex.widget.banner.tips.Banner
+<com.alex.widget.banner.tips.TipsBanner
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -41,7 +41,7 @@ compile "com.github.alexchenopen:VerticalTipsBanner:0.0.1"
 
 也可以在Activity中通过Java代码控制
 ```
-banner = (Banner) findViewById(R.id.banner);
+banner = (TipsBanner) findViewById(R.id.banner);
 banner.setDelayTime(3000)
         .setScrollTime(4000)
         .setAutoPlay(true)
