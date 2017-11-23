@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@android:color/white"
+        app:tips_layout="@layout/layout_tips"
         app:delay_time="3000"
         app:is_auto_play="true"
         app:is_scroll="false"
