@@ -109,4 +109,3 @@ banner.setOnBottomTipsClickListener(new OnBottomTipsClickListener() {
 
 
 ##  FAQ
-QQ:108762795
